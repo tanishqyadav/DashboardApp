@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     // Live Dashboard //
+     <br>
+     updated..<h3 id="yo"> </h3> <span> times</span>
+     <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+
+     <script
+     src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+     </script>
+
+     <script>
+
+          const fetchChartData = async() => {
+<<<<<<< HEAD
+          const response = await fetch(window.location + 'barchart')
+=======
+          const response = await fetch(window.location + 'data')
+>>>>>>> 80df4dd7 (first commit)
+          const data = await response.json()
+          console.log(data)
+          return data
+     }
+          let myChart;
+          const drawChart = async() => {
+               const cdata = await fetchChartData()
+<<<<<<< HEAD
+               const {chartData,chartLabels} = cdata
+               myChart = new Chart("myChart", {
+                    type: "line",
+                    data: {
+                         labels:chartLabels,
+                         datasets:[{
+                              label:'obtained marks per email id',
+                              data:chartData,
+=======
+               const {bchartData,bchartLabels} = cdata
+               myChart = new Chart("myChart", {
+                    type: "pie",
+                    data: {
+                         labels:bchartLabels,
+                         datasets:[{
+                              label:'obtained marks per email id',
+                              data:bchartData,
+                              borderwidth:1
+>>>>>>> 80df4dd7 (first commit)
+                         }]
+                    },
+                    options: {}
+                    });
+          }
+          
+<<<<<<< HEAD
+          // drawchart()
+          // console.log('chart')
+=======
+          drawChart()
+          console.log('chart')
+>>>>>>> 80df4dd7 (first commit)
+          
+          const updateChart = async() =>{
+               if (myChart){
+                    myChart.destroy()
+               }
+               
+               await drawChart()
+          }
+<<<<<<< HEAD
+          
+          // var ws = new WebSocket(
+          //      'ws://' 
+          //      + window.location.host 
+          //      // "/ws/dashboard/"
+          //      )
+          // console.log(ws)
+
+          // ws.onopen = function(){
+          //      console.log('Websocket connection open...')
+          //      ws.send(JSON.stringify({'msg':'hi, message from client..'}))
+          //      updateChart()
+          //      console.log('chart updated..')
+          // }
+          // ws.onmessage = function(event){
+          //      console.log('EVENT..', event)
+          //      console.log('Message recieved from server...',event.data)
+          //      var data = JSON.parse(event.data)
+          //      document.getElementById('yo').innerText = data
+          //      updateChart()
+          //      console.log('chart updated..')
+          
+
+          // }
+          // ws.onerror = function(event){
+          //      console.log('websocket error occured..',event)
+          // }
+          // ws.close = function(event){
+          //      console.log('websocket connection closed...', event)
+          // }
+=======
+>>>>>>> 80df4dd7 (first commit)
+
+     </script>
+</body>
+</html>
